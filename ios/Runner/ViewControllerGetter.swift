@@ -12,6 +12,8 @@ enum ViewControllerGetter: String {
     case viewController2
     
     func getViewController (with params: [String: AnyObject]?) -> UIViewController? {
+
+
         switch self {
         case .viewController:
             if params != nil {
@@ -22,6 +24,7 @@ enum ViewControllerGetter: String {
             }
         case .viewController2:
             if params != nil {
+
                 let vc = ViewController2();
                 vc.buttonTitleA = params!["param 1"] as? String;
                 vc.buttonTitleB = params!["param 2"] as? String;
