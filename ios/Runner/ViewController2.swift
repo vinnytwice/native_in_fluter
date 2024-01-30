@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import Flutter
+import Flutter
 
 class ViewController2: UIViewController {
     var buttonTitleA: String?

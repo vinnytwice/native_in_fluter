@@ -14,6 +14,7 @@
 		172E205A2B3D6500002BBD30 /* ViewControllerGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172E20592B3D6500002BBD30 /* ViewControllerGetter.swift */; };
 		1770D27C2B34A25C00F3148D /*  FLNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770D27B2B34A25C00F3148D /*  FLNativeView.swift */; };
 		17C550482B625FC3000ED351 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C550472B625FC3000ED351 /* NavigationVC.swift */; };
+		17CCA6632B69016800AABBA2 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCA6622B69016800AABBA2 /* TableVC.swift */; };
 		17E4CD922B3C2B37006E0471 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E4CD912B3C2B37006E0471 /* ViewController2.swift */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
@@ -57,6 +58,7 @@
 		172E20592B3D6500002BBD30 /* ViewControllerGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGetter.swift; sourceTree = "<group>"; };
 		1770D27B2B34A25C00F3148D /*  FLNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " FLNativeView.swift"; sourceTree = "<group>"; };
 		17C550472B625FC3000ED351 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+		17CCA6622B69016800AABBA2 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		17E4CD912B3C2B37006E0471 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		30AE54B0E43EA3D25A0E6D65 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				172E20592B3D6500002BBD30 /* ViewControllerGetter.swift */,
 				1708A4D72B67F75500E9513A /* MapScreen.swift */,
+				17CCA6622B69016800AABBA2 /* TableVC.swift */,
 				170E09672B347BF70044E739 /* ViewController.swift */,
 				17C550472B625FC3000ED351 /* NavigationVC.swift */,
 				17E4CD912B3C2B37006E0471 /* ViewController2.swift */,
@@ -382,6 +385,7 @@
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				170E09682B347BF70044E739 /* ViewController.swift in Sources */,
 				1770D27C2B34A25C00F3148D /*  FLNativeView.swift in Sources */,
+				17CCA6632B69016800AABBA2 /* TableVC.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				172E205A2B3D6500002BBD30 /* ViewControllerGetter.swift in Sources */,
 			);

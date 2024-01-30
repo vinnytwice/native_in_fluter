@@ -35,17 +35,28 @@ class AdatptivePlatformView extends StatelessWidget {
               ),
             },
           )
-        : UiKitView(
-            viewType: viewType,
-            layoutDirection: TextDirection.ltr,
-            creationParams: creationParams,
-            creationParamsCodec: const StandardMessageCodec(),
-            hitTestBehavior: PlatformViewHitTestBehavior.translucent,
-            gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
-              Factory<OneSequenceGestureRecognizer>(
-                () => EagerGestureRecognizer(),
-              ),
+        : GestureDetector(
+            // behavior: HitTestBehavior.translucent,
+            behavior: HitTestBehavior.deferToChild,
+            onTap: () {
+              console.log('GestureDEtector\'s onTap pressed');
             },
+            child: UiKitView(
+              viewType: viewType,
+              layoutDirection: TextDirection.ltr,
+              creationParams: creationParams,
+              creationParamsCodec: const StandardMessageCodec(),
+              // hitTestBehavior: PlatformViewHitTestBehavior.transparent, // no click passes through to iOS view
+              // hitTestBehavior: PlatformViewHitTestBehavior
+              //     .translucent, // clicks do pass throuth to the iOS view, but button's tap is not detected
+              hitTestBehavior: PlatformViewHitTestBehavior.translucent,
+              gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+                Factory<OneSequenceGestureRecognizer>(
+                  () => EagerGestureRecognizer(),
+                  // () => TapGestureRecognizer(),
+                ),
+              },
+            ),
           );
   }
 }

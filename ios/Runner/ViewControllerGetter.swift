@@ -20,14 +20,13 @@ enum ViewControllerGetter: String {
                 let vc = ViewController();
                 vc.buttonTitleA = params!["param 1"] as? String;
                 vc.buttonTitleB = params!["param 2"] as? String;
+                
                 return vc
             }
         case .viewController2:
             if params != nil {
 
-                let vc = ViewController2();
-                vc.buttonTitleA = params!["param 1"] as? String;
-                vc.buttonTitleB = params!["param 2"] as? String;
+                let vc = TableVC();
                 return vc
             }
 
