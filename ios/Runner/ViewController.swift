@@ -11,8 +11,8 @@ import Flutter
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     public var buttonTitleA: String?
     public var buttonTitleB: String?
-    var buttonA = UIButton(type:UIButton.ButtonType.custom)
-    var buttonB = UIButton(type:UIButton.ButtonType.custom)
+    var buttonA = UIButton(type:UIButton.ButtonType.custom) as UIButton
+    var buttonB = UIButton(type:UIButton.ButtonType.custom) as UIButton
     var nativeViewerPlatformCahannel: FlutterMethodChannel?
 
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let controller = appDelegate.window?.rootViewController as! FlutterViewController;
         nativeViewerPlatformCahannel = FlutterMethodChannel(name: "native_viewer_platform_channel",binaryMessenger: controller.binaryMessenger);
 
-        let sampleTextField =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+        let sampleTextField =  UITextField(frame: CGRect(x: self.view.frame.width / 2 - 150, y: 100, width: 300, height: 40))
         sampleTextField.placeholder = "Enter text here"
         sampleTextField.font = UIFont.systemFont(ofSize: 15)
         sampleTextField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -37,9 +37,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         buttonA.addTarget(self, action: #selector(changeButtonBTitle), for: .touchUpInside)
         buttonA.setTitle(buttonTitleA ?? "VC BUTTON A", for: UIControl.State.normal)
-        buttonA.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
-        buttonA.backgroundColor = UIColor.gray// .systemGray5
-        buttonA.setTitleColor(UIColor.blue, for: .normal)
+        buttonA.frame = CGRect(x: self.view.frame.width / 2 - 80, y: 210.0, width: 160.0, height: 40.0)
+        buttonA.backgroundColor = UIColor.systemGray5
+        buttonA.setTitleColor(UIColor.systemBlue, for: .normal)
         buttonA.layer.cornerRadius = 8;
         buttonA.isUserInteractionEnabled = true
 
@@ -48,22 +48,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(buttonBPressed))
 
-        tapGestureRecognizer.isEnabled = true
-        tapGestureRecognizer.cancelsTouchesInView = false
-        tapGestureRecognizer.delegate = self
+        // tapGestureRecognizer.isEnabled = true
+        // tapGestureRecognizer.cancelsTouchesInView = false
+        // tapGestureRecognizer.delegate = self
 
          
          
-        //  self.view.addGestureRecognizer(tapGestureRecognizer);
-        buttonB.addGestureRecognizer(tapGestureRecognizer);
+         self.view.addGestureRecognizer(tapGestureRecognizer);
+        // buttonB.addGestureRecognizer(tapGestureRecognizer);
 
 
         //  buttonB.addTarget(self, action: #selector(buttonBPressed), for: .touchUpInside)
         buttonB.setTitle(buttonTitleB ?? "VC BUTTON B", for: UIControl.State.normal)
 
-        buttonB.frame = CGRect(x: 80.0, y: 260.0, width: 160.0, height: 40.0)
-        buttonB.backgroundColor = UIColor.gray//.systemGray5
-        buttonB.setTitleColor(UIColor.blue, for: .normal)
+        buttonB.frame = CGRect(x: self.view.frame.width / 2 - 80, y: 260.0, width: 160.0, height: 40.0)
+        buttonB.backgroundColor = UIColor.systemGray5
+        buttonB.setTitleColor(UIColor.systemBlue, for: .normal)
         buttonB.layer.cornerRadius = 8;
         buttonB.isUserInteractionEnabled = true
         self.view.addSubview(buttonB);

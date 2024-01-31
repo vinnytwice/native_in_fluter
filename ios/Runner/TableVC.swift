@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class TableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate{
     
     private let myArray: NSArray = ["First","Second","Third"]
     private var myTableView: UITableView!
-    let buttonA = UIButton(type:UIButton.ButtonType.custom)
+    let buttonA = UIButton(type:UIButton.ButtonType.custom) as UIButton
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class TableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.view.addSubview(myTableView)
         
         
-//        buttonA.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+        buttonA.addTarget(self, action: #selector(onTap), for: .touchUpInside)
 //         buttonA.setTitle("Flutter Screen A", for: UIControl.State.normal)
         buttonA.setTitle("Button", for: UIControl.State.normal)
         buttonA.frame = CGRect(x: displayWidth / 2  - 80, y: myTableView.frame.height + barHeight, width: 160.0, height: 40.0)
@@ -37,6 +37,10 @@ class TableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         buttonA.setTitleColor(UIColor.systemBlue, for: .normal)
         buttonA.layer.cornerRadius = 8;
         self.view.addSubview(buttonA)
+    }
+    @objc func onTap() {
+        buttonA.setTitle("Button tapped", for: UIControl.State.normal)
+        buttonA.setTitleColor(UIColor.black, for: .normal)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

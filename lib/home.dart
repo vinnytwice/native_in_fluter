@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                nativeViewTitle = 'Screen A';
+                nativeViewTitle = 'ViewController';
                 params.clear();
                 params = {
                   'screen': 'viewController',
@@ -109,12 +109,12 @@ class _HomeState extends State<Home> {
                 // callNative();
               },
               child: const Text(
-                'Navigate to ios screen A',
+                'Navigate to ViewController',
               ),
             ),
             ElevatedButton(
               onPressed: () {
-                nativeViewTitle = 'Screen B';
+                nativeViewTitle = 'TableView';
                 params.clear();
                 params = {
                   'screen': 'viewController2',
@@ -132,7 +132,66 @@ class _HomeState extends State<Home> {
                 // });
               },
               child: const Text(
-                'Navigate to ios screen B',
+                'Navigate to TableView',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                nativeViewTitle = 'ScrollView';
+                params.clear();
+                params = {
+                  'screen': 'viewController3',
+                  'param 1': 'close native',
+                  'param 2': 'goto VC1'
+                };
+                pushNativeView(
+                    context: context,
+                    nativeViewTitle: nativeViewTitle,
+                    params: params);
+                // callNative();
+                // channel.invokeMethod(
+                //     "navigate_to-screen_b", ["screen_b"]).catchError((e) {
+                //   console.log('invokeMethod b error: $e');
+                // });
+              },
+              child: const Text(
+                'Navigate to ScrollView',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                nativeViewTitle = 'MapView';
+                params.clear();
+                params = {
+                  'screen': 'viewController4',
+                  'param 1': 'close native',
+                  'param 2': 'goto VC1'
+                };
+                pushNativeView(
+                    context: context,
+                    nativeViewTitle: nativeViewTitle,
+                    params: params);
+              },
+              child: const Text(
+                'Navigate to MapView',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                nativeViewTitle = 'VCMapView';
+                params.clear();
+                params = {
+                  'screen': 'viewController5',
+                  'param 1': 'close native',
+                  'param 2': 'goto VC1'
+                };
+                pushNativeView(
+                    context: context,
+                    nativeViewTitle: nativeViewTitle,
+                    params: params);
+              },
+              child: const Text(
+                'Navigate to VCMapView',
               ),
             )
           ],

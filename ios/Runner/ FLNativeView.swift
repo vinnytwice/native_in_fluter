@@ -108,7 +108,8 @@ class DynamicNativeViewFactory: NSObject, FlutterPlatformViewFactory {
     }
 }
 
-class DynamicNativeView: NSObject, UIGestureRecognizerDelegate, FlutterPlatformView {
+// class DynamicNativeView: NSObject, UIGestureRecognizerDelegate, FlutterPlatformView {
+class DynamicNativeView: NSObject, FlutterPlatformView {
     private var _view: UIView = UIView();
     
 
@@ -124,13 +125,13 @@ class DynamicNativeView: NSObject, UIGestureRecognizerDelegate, FlutterPlatformV
             let screen: String = params["screen"] as! String;
             
             if let vc = ViewControllerGetter(rawValue: screen)?.getViewController(with: params) {
-//                vc.view.isUserInteractionEnabled = true;
-//                _view = vc.view;
-//                // _view.addSubview(vc.view);
-//                _view.isOpaque = false
-//                _view.isUserInteractionEnabled = true;
+// //                vc.view.isUserInteractionEnabled = true;
+// //                _view = vc.view;
+               _view.addSubview(vc);
+// //                _view.isOpaque = false
+// //                _view.isUserInteractionEnabled = true;
 
-                 _view = vc.view;
+                //  _view = vc.view;
 
                 
             }

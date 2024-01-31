@@ -3,6 +3,8 @@ import 'dart:io';
 import 'dart:developer' as console;
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:native_in_fluter/adaptive_platform_view.dart';
@@ -81,6 +83,11 @@ class _NativeViewerState extends State<NativeViewer> {
         layoutDirection: TextDirection.ltr,
         creationParams: creationParams,
         creationParamsCodec: const StandardMessageCodec(),
+        gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+          Factory<OneSequenceGestureRecognizer>(
+            () => EagerGestureRecognizer(),
+          ),
+        },
       ),
     );
   }
